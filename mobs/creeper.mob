@@ -1,0 +1,159 @@
+AVATAR_ACCENT	0
+AVATAR_ACCENTCOLOR	0.990 0.960 0.000 0.700
+AVATAR_CHEST	0
+AVATAR_CHESTCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_DECALNAME	AAA-None
+AVATAR_FACENAME	memeGrinMan
+AVATAR_HAT	0
+AVATAR_HATCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_HEADCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_HIP	0
+AVATAR_HIPCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_LARM	0
+AVATAR_LARMCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_LHAND	1
+AVATAR_LHANDCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_LLEG	0
+AVATAR_LLEGCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_PACK	0
+AVATAR_PACKCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_RARM	0
+AVATAR_RARMCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_RHAND	1
+AVATAR_RHANDCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_RLEG	0
+AVATAR_RLEGCOLOR	0.373832 0.82243 0.471963 1
+AVATAR_SECONDPACK	0
+AVATAR_SECONDPACKCOLOR	0 0.435323 0.831776 1
+P	PlayerSlow
+N	Creeper
+DR	COAL 10
+DL	5
+ML	1
+AL	1
+H	onTick	DRPGMob_Creeper_Tick
+H	onDestroy	DRPGMob_Creeper_Destroy
+S	$DRPG::Mobs::Creeper::Glow[0] = "0.6 1 0.7 1";
+	$DRPG::Mobs::Creeper::Glow[1] = "0.373832 0.82243 0.471963 1";
+	if(!isObject(sulphateExplosionProjectile))
+	{
+		datablock ProjectileData(sulphateExplosionProjectile : vehicleExplosionProjectile)
+		{
+			directDamage        = 100;
+			radiusDamage        = 100;
+			damageRadius        = 6;
+			explosion           = vehicleExplosion;
+			directDamageType  = $DamageType::Radius;
+			radiusDamageType  = $DamageType::Radius;
+			explodeOnDeath		= 1;
+			armingDelay         = 0;
+			lifetime            = 10;
+		};
+	}
+	function DRPGMob_Creeper_Tick(%creeper)
+	{
+		if(!isObject(%creeper) || !%creeper.ticking)
+			return;
+		if(isObject(%creeper.target))
+			return DRPGMob_Creeper_Process(%creeper,%creeper.target);
+		initContainerRadiusSearch(%creeper.getTransform(),10,$TypeMasks::PlayerObjectType);
+		while(isObject(%player = containerSearchNext()))
+		{
+			if(isObject(%player.client) && !isObject(%player.director))
+			{
+				if(isObject(%creeper.room) && %player.room != %creeper.room)
+					continue;
+				%creeper.target = %player;
+				DRPGMob_Creeper_Process(%creeper,%creeper.target);
+				return;
+			}
+		}
+		if(!isObject(%creeper.room))
+		{
+			if(!isEventPending(%creeper.destroySchedule))
+				%creeper.destroySchedule = %creeper.director.schedule(2500,"fadeMob",%creeper,250);
+		}
+	}
+	function DRPGMob_Creeper_Process(%creeper,%target)
+	{
+		cancel(%creeper.destroySchedule);
+		%dist = vectorDist(posFromTransform(%creeper.getTransform()),posFromTransform(%target.getTransform()));
+		if(%dist > 25)
+		{
+			if(!isObject(%creeper.room))
+			{
+				%creeper.target = "";
+				%creeper.setMoveObject("");
+				%creeper.setAimObject("");
+				%creeper.destroySchedule = %creeper.director.schedule(2500,"fadeMob",%creeper,250);
+				return;
+			}
+		}
+		else if(%dist <= 6)
+		{
+			%time = getSimTime();
+			if(%creeper.ignited)
+			{
+				if(%time - %creeper.ignitedTime >= 2000)
+				{
+					cancel(%creeper.destroySchedule);
+           				%p = new Projectile()
+            				{
+               					dataBlock = sulphateExplosionProjectile;
+						initialPosition = %creeper.getTransform();
+						initialVelocity = "0 0 1";
+						scale = "2 2 2";
+						client = %target.client;
+						sourceObject = %target;
+						sourceClient = %target.client;
+						mobExplosion = 1;
+						mobExplosionName = "Creeper";
+					};
+					missionCleanup.add(%p);
+					initContainerRadiusSearch(%creeper.getTransform(),7.5,$TypeMasks::fxBrickObjectType);
+					while(isObject(%brick = containerSearchNext()))
+					{
+						%db = %brick.getDatablock();
+						if(%db.DRPG_isWood || %db.DRPG_isOre || %db.getVolume() > 35)
+							continue;
+						%brick.killBrick();
+					}
+					%creeper.director.destroyMob(%creeper);
+					return;
+				}
+			}
+			else
+			{
+				%creeper.ignited = 1;
+				%creeper.ignitedTime = %time;
+				%creeper.glow = 0;
+			}
+			%creeper.glow++;
+			if(%creeper.glow > 1)
+				%creeper.glow = 0;
+			%creeper.setNodeColor("ALL",$DRPG::Mobs::Creeper::Glow[%creeper.glow]);
+		}
+		else
+		{
+			%creeper.ignited = 0;
+			%creeper.ignitedTime = "";
+			%creeper.glow = 0;
+			%creeper.setNodeColor("ALL",$DRPG::Mobs::Creeper::Glow[1]);
+		}
+		%creeper.setMoveObject(%creeper.target);
+		%creeper.setAimObject(%creeper.target);
+	}
+	function DRPGMob_Creeper_Destroy(%creeper)
+	{
+		if(!isObject(%creeper))
+			return;
+		if(isObject(%creeper.room))
+		{
+			%brick = %creeper.dungeonSpawnBrick;
+			if(isObject(%brick))
+			{
+				%time = (60000 - getRandom(2,4) * 1000 * %creeper.room.players.getCount());
+				%creeper.room.generator.mobDirector.schedule(%time,"spawnMob",vectorAdd(%brick.getTransform(),"0 0 0.3"),%creeper.mobType,%creeper.room,%startTicking,1,%brick);
+			}
+		}
+	}

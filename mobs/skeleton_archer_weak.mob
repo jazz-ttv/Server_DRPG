@@ -1,0 +1,103 @@
+AVATAR_ACCENT	0
+AVATAR_ACCENTCOLOR	0.900 0.900 0.900 1.000
+AVATAR_CHEST	0
+AVATAR_CHESTCOLOR	0.900 0.900 0.900 1.000
+AVATAR_DECALNAME	AAA-None
+AVATAR_FACENAME	smiley
+AVATAR_HAT	0
+AVATAR_HATCOLOR	1 1 1 1
+AVATAR_HEADCOLOR	0.900 0.900 0.900 1.000
+AVATAR_HIP	0
+AVATAR_HIPCOLOR	0.900 0.900 0.900 1.000
+AVATAR_LARM	1
+AVATAR_LARMCOLOR	0.900 0.900 0.900 1.000
+AVATAR_LHAND	1
+AVATAR_LHANDCOLOR	0.900 0.900 0.900 1.000
+AVATAR_LLEG	0
+AVATAR_LLEGCOLOR	0.900 0.900 0.900 1.000
+AVATAR_PACK	0
+AVATAR_PACKCOLOR	0.900 0.900 0.900 1.000
+AVATAR_RARM	1
+AVATAR_RARMCOLOR	0.900 0.900 0.900 1.000
+AVATAR_RHAND	0
+AVATAR_RHANDCOLOR	0.900 0.900 0.900 1.000
+AVATAR_RLEG	1
+AVATAR_RLEGCOLOR	0.900 0.900 0.900 1.000
+AVATAR_SECONDPACK	0
+AVATAR_SECONDPACKCOLOR	0.900 0.900 0.900 1.000
+N	Skeleton Archer
+DR	OAK_BOW 0
+DL	1
+ML	1
+AL	1
+H	onSpawn	DRPGMob_SkeletonArcherWeak_Spawn
+H	onTick	DRPGMob_SkeletonArcherWeak_Tick
+H	onDestroy	DRPGMob_SkeletonArcherWeak_Destroy
+S	function DRPGMob_SkeletonArcherWeak_Tick(%sw)
+	{
+		if(!isObject(%sw) || !%sw.ticking)
+			return;
+		if(isObject(%sw.target) && %sw.target.getState() !$= "Dead")
+			return DRPGMob_SkeletonArcherWeak_Process(%sw,%sw.target);
+		initContainerRadiusSearch(%sw.getTransform(),10,$TypeMasks::PlayerObjectType);
+		while(isObject(%player = containerSearchNext()))
+		{
+			if(isObject(%player.client) && !isObject(%player.director) && %player.getState() !$= "Dead")
+			{
+				if(isObject(%sw.room) && %player.room != %sw.room)
+					continue;
+				%sw.target = %player;
+				DRPGMob_SkeletonArcherWeak_Process(%sw,%sw.target);
+				return;
+			}
+		}
+		%sw.setImageTrigger(0,0);
+		if(!isObject(%sw.room))
+		{
+			if(!isEventPending(%sw.destroySchedule))
+				%sw.destroySchedule = %sw.director.schedule(2000,"fadeMob",%sw,1000);
+		}
+	}
+	function DRPGMob_SkeletonArcherWeak_Process(%sw,%target)
+	{
+		cancel(%sw.destroySchedule);
+		%dist = vectorDist(posFromTransform(%sw.getTransform()),posFromTransform(%target.getTransform()));
+		if(%dist > 30)
+		{
+			if(!isObject(%sw.room))
+			{
+				%sw.target = "";
+				%sw.setMoveObject("");
+				%sw.setAimObject("");
+				%sw.destroySchedule = %sw.director.schedule(3000,"fadeMob",%sw,1000);
+				return;
+			}
+		}
+		%sw.setMoveObject(%sw.target);
+		%sw.setAimObject(%sw.target);
+		if(%dist < 25)
+			%sw.setImageTrigger(0,1);
+		else
+			%sw.setImageTrigger(0,0);
+	}
+	function DRPGMob_SkeletonArcherWeak_Spawn(%sw)
+	{
+		if(!isObject(%sw))
+			return;
+		%sw.playThread(2,"armReadyRight");
+		%sw.mountImage(bowImage,0);
+	}
+	function DRPGMob_SkeletonArcherWeak_Destroy(%sw)
+	{
+		if(!isObject(%sw))
+			return;
+		if(isObject(%sw.room))
+		{
+			%brick = %sw.dungeonSpawnBrick;
+			if(isObject(%brick))
+			{
+				%time = (60000 - getRandom(2,4) * 1000 * %sw.room.players.getCount());
+				%sw.room.generator.mobDirector.schedule(%time,"spawnMob",vectorAdd(%brick.getTransform(),"0 0 0.3"),%sw.mobType,%sw.room,%startTicking,1,%brick);
+			}
+		}
+	}

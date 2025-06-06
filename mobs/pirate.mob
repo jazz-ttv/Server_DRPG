@@ -1,0 +1,103 @@
+AVATAR_ACCENT	1
+AVATAR_ACCENTCOLOR	0.990 0.960 0.000 0.700
+AVATAR_CHEST	0
+AVATAR_DECALNAME	Medieval-Tunic
+AVATAR_FACENAME	smileyRedBeard
+AVATAR_HAT	0
+AVATAR_HATCOLOR	0.0784314 0.0784314 0.0784314 1
+AVATAR_HEADCOLOR	1 0.878431 0.611765 1
+AVATAR_HIP	0
+AVATAR_HIPCOLOR	0.200 0.200 0.200 1.000
+AVATAR_LARM	0
+AVATAR_LARMCOLOR	0.392157 0.196078 0 1
+AVATAR_LHAND	1
+AVATAR_LHANDCOLOR	0.5 0.5 0.5 1
+AVATAR_LLEG	0
+AVATAR_LLEGCOLOR	0.200 0.200 0.200 1.000
+AVATAR_PACK	0
+AVATAR_PACKCOLOR	0.2 0 0.8 1
+AVATAR_RARM	0
+AVATAR_RARMCOLOR	0.392157 0.196078 0 1
+AVATAR_RHAND	0
+AVATAR_RHANDCOLOR	1 0.878431 0.611765 1
+AVATAR_RLEG	0
+AVATAR_RLEGCOLOR	0.200 0.200 0.200 1.000
+AVATAR_SECONDPACK	0
+AVATAR_SECONDPACKCOLOR	0.0784314 0.0784314 0.0784314 1
+AVATAR_CHESTCOLOR	0.392157 0.196078 0 1
+N	Pirate
+DR	DERMITE_SHORTSWORD 6
+DL	10
+ML	10
+AL	1
+H	onSpawn	DRPGMob_Pirate_Spawn
+H	onTick	DRPGMob_Pirate_Tick
+H	onDestroy	DRPGMob_Pirate_Destroy
+S	function DRPGMob_Pirate_Tick(%sw)
+	{
+		if(!isObject(%sw) || !%sw.ticking)
+			return;
+		if(isObject(%sw.target) && %sw.target.getState() !$= "Dead")
+			return DRPGMob_Pirate_Process(%sw,%sw.target);
+		initContainerRadiusSearch(%sw.getTransform(),10,$TypeMasks::PlayerObjectType);
+		while(isObject(%player = containerSearchNext()))
+		{
+			if(isObject(%player.client) && !isObject(%player.director) && %player.getState() !$= "Dead")
+			{
+				if(isObject(%sw.room) && %player.room != %sw.room)
+					continue;
+				%sw.target = %player;
+				DRPGMob_Pirate_Process(%sw,%sw.target);
+				return;
+			}
+		}
+		%sw.setImageTrigger(0,0);
+		if(!isObject(%sw.room))
+		{
+			if(!isEventPending(%sw.destroySchedule))
+				%sw.destroySchedule = %sw.director.schedule(2000,"fadeMob",%sw,1000);
+		}
+	}
+	function DRPGMob_Pirate_Process(%sw,%target)
+	{
+		cancel(%sw.destroySchedule);
+		%dist = vectorDist(posFromTransform(%sw.getTransform()),posFromTransform(%target.getTransform()));
+		if(%dist > 20)
+		{
+			if(!isObject(%sw.room))
+			{
+				%sw.target = "";
+				%sw.setMoveObject("");
+				%sw.setAimObject("");
+				%sw.destroySchedule = %sw.director.schedule(3000,"fadeMob",%sw,1000);
+				return;
+			}
+		}
+		%sw.setMoveObject(%sw.target);
+		%sw.setAimObject(%sw.target);
+		if(%dist < 5)
+			%sw.setImageTrigger(0,1);
+		else
+			%sw.setImageTrigger(0,0);
+	}
+	function DRPGMob_Pirate_Spawn(%sw)
+	{
+		if(!isObject(%sw))
+			return;
+		%sw.playThread(2,"armReadyRight");
+		%sw.mountImage(dermiteShortSwordImage,0);
+	}
+	function DRPGMob_Pirate_Destroy(%sw)
+	{
+		if(!isObject(%sw))
+			return;
+		if(isObject(%sw.room))
+		{
+			%brick = %sw.dungeonSpawnBrick;
+			if(isObject(%brick))
+			{
+				%time = (60000 - getRandom(2,4) * 1000 * %sw.room.players.getCount());
+				%sw.room.generator.mobDirector.schedule(%time,"spawnMob",vectorAdd(%brick.getTransform(),"0 0 0.3"),%sw.mobType,%sw.room,%startTicking,1,%brick);
+			}
+		}
+	}

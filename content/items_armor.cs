@@ -1,0 +1,67 @@
+drpgAddArmor("HLEATHER_CLOTHES","Hardened Leather Armor","A set of hard leather clothing. It gives minimal defense, but requires high crafting skill.",700*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/chest/chest","0.2 0.15 0.1 1",3,"chest\tpants\tlarm\trarm","0.2 0.15 0.1 1","LinkTunic",0.05);
+drpgAddArmor("HLEATHER_SHOES","Hardened Leather Boots","A pair of hard leather shoes. It gives a tiny bit of defense, but requires high crafting skill.",300*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.2 0.15 0.1 1",10,"lshoe\trshoe","0.2 0.15 0.1 1",0.02);
+drpgAddArmor("HLEATHER_GLOVES","Hardened Leather Gloves","A pair of hard leather gloves. It gives a tiny bit of defense, but requires high crafting skill.",150*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.2 0.15 0.1 1",9,"lhand\trhand","0.2 0.15 0.1 1",0.02);
+
+drpgAddArmor("BIRON_ARMOR","Black Iron Plated Armor","A set of hard leather clothing with heavy black iron plates attached. It still weighs a ton...",2000*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/chest/chest","0.1 0.05 0 1",3,"chest\tpants\tlarm\trarm","0.1 0.05 0 1","LinkTunic",0.18);
+drpgAddArmor("BIRON_SHOES","Black Iron Plated Boots","A pair of hard leather shoes with heavy black iron plates attached.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.1 0.05 0 1",10,"lshoe\trshoe","0.1 0.05 0 1",0.045);
+drpgAddArmor("BIRON_GLOVES","Black Iron Plated Gloves","A pair of hard leather gloves with heavy black iron plates attached.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.1 0.05 0 1",9,"lhand\trhand","0.1 0.05 0 1",0.11);
+drpgAddArmor("BIRON_PAULDRONS","Black Iron Pauldrons","Pauldrons made of heavy black iron. Dear god, you could kill someone if you dropped these on them.",1100*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/secondpack/shoulderpads","0 0 0 1",2,"shoulderpads","0 0 0 1","",0.1);
+
+drpgAddArmor("BRONZE_ARMOR","Bronze Armor","Metal armor made of bronze.",52*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/pack/armor","0.4 0.2 0 1",3,"chest\tpants\tlarm\trarm\tarmor","0.4 0.2 0 1","LinkTunic",0.01);
+drpgAddArmor("SILVER_ARMOR","Silver Armor","Metal armor made of silver. It's not very strong but it looks nice.",130*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/pack/armor","0.9 0.9 0.9 1",3,"chest\tpants\tlarm\trarm\tarmor","0.9 0.9 0.9 1","LinkTunic",0.02);
+drpgAddArmor("GOLD_ARMOR","Gold Armor","Metal armor made of gold. It's not very strong but it looks nice.",520*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/pack/armor","0.9 0.9 0 1",3,"chest\tpants\tlarm\trarm\tarmor","0.9 0.9 0 1","LinkTunic",0.03);
+drpgAddArmor("IRON_ARMOR","Iron Armor","Metal armor made of iron. It is very durable.",520*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/pack/armor","0.73 0.62 0.52 1",3,"chest\tpants\tlarm\trarm\tarmor","0.73 0.62 0.52 1","LinkTunic",0.09);
+drpgAddArmor("STEEL_ARMOR","Steel Armor","Metal armor made of steel. It is extremely durable.",700*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/pack/armor","0.8 0.8 0.8 1",3,"chest\tpants\tlarm\trarm\tarmor","0.8 0.8 0.8 1","LinkTunic",0.14);
+drpgAddArmor("DESTINITE_ARMOR","Destinite Armor","Metal armor made of destinite. It is super durable.",2000*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/pack/armor","0.8 0.2 0.5 1",3,"chest\tpants\tlarm\trarm\tarmor","0.8 0.2 0.5 1","LinkTunic",0.2);
+
+drpgAddArmor("BRONZE_GLOVES","Bronze Gloves","Gloves plated with bronze.",11*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.4 0.2 0 1",9,"lhand\trhand","0.4 0.2 0 1","",0.005);
+drpgAddArmor("SILVER_GLOVES","Silver Gloves","Gloves plated with silver. It's not very strong but it looks nice.",37*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.9 0.9 0.9 1",9,"lhand\trhand","0.9 0.9 0.9 1",0.006);
+drpgAddArmor("GOLD_GLOVES","Gold Gloves","Gloves plated with gold. It's not very strong but it looks nice.",100*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.9 0.9 0 1",9,"lhand\trhand","0.9 0.9 0 1",0.007);
+drpgAddArmor("IRON_GLOVES","Iron Gloves","Gloves plated with iron. It is very durable.",120*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.73 0.62 0.52 1",9,"lhand\trhand","0.73 0.62 0.52 1",0.01);
+drpgAddArmor("STEEL_GLOVES","Steel Gloves","Gloves plated with steel. It is extremely durable.",200*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.8 0.8 0.8 1",9,"lhand\trhand","0.8 0.8 0.8 1",0.02);
+drpgAddArmor("DESTINITE_GLOVES","Destinite Gloves","Gloves plated with destinite. It is super durable.",410*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.8 0.2 0.5 1",9,"lhand\trhand","0.8 0.2 0.5 1",0.05);
+
+drpgAddArmor("BRONZE_PAULDRONS","Bronze Pauldrons","Pauldrons plated with bronze.",15*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/secondpack/shoulderpads","0.4 0.2 0 1",2,"shoulderpads","0.4 0.2 0 1","",0.007);
+drpgAddArmor("SILVER_PAULDRONS","Silver Pauldrons","Pauldrons plated with silver. It's not very strong but it looks nice.",39*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/secondpack/shoulderpads","0.9 0.9 0.9 1",2,"shoulderpads","0.9 0.9 0.9 1","",0.008);
+drpgAddArmor("GOLD_PAULDRONS","Gold Pauldrons","Pauldrons plated with gold. It's not very strong but it looks nice.",150*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/secondpack/shoulderpads","0.9 0.9 0 1",2,"shoulderpads","0.9 0.9 0 1","",0.009);
+drpgAddArmor("IRON_PAULDRONS","Iron Pauldrons","Pauldrons plated with iron. It is very durable.",180*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/secondpack/shoulderpads","0.73 0.62 0.52 1",2,"shoulderpads","0.73 0.62 0.52 1","",0.025);
+drpgAddArmor("STEEL_PAULDRONS","Steel Pauldrons","Pauldrons plated with steel. It is extremely durable.",180*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/secondpack/shoulderpads","0.8 0.8 0.8 1",2,"shoulderpads","0.8 0.8 0.8 1","",0.04);
+drpgAddArmor("DESTINITE_PAULDRONS","Destinite Pauldrons","Pauldrons plated with destinite. It is super durable.",600*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/secondpack/shoulderpads","0.8 0.2 0.5 1",2,"shoulderpads","0.8 0.2 0.5 1","",0.075);
+
+drpgAddArmor("BRONZE_BOOTS","Bronze Boots","Boots plated with bronze.",20*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.4 0.2 0 1",10,"lshoe\trshoe","0.4 0.2 0 1","",0.01);
+drpgAddArmor("SILVER_BOOTS","Silver Boots","Boots plated with silver. It's not very strong but it looks nice.",50*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.9 0.9 0.9 1",10,"lshoe\trshoe","0.9 0.9 0.9 1","",0.011);
+drpgAddArmor("GOLD_BOOTS","Gold Boots","Boots plated with gold. It's not very strong but it looks nice.",200*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.9 0.9 0 1",10,"lshoe\trshoe","0.9 0.9 0 1","",0.012);
+drpgAddArmor("IRON_BOOTS","Iron Boots","Boots plated with iron. It is very durable.",250*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.73 0.62 0.52 1",10,"lshoe\trshoe","0.73 0.62 0.52 1","",0.075);
+drpgAddArmor("STEEL_BOOTS","Steel Boots","Boots plated with steel. It is extremely durable.",250*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.8 0.8 0.8 1",10,"lshoe\trshoe","0.8 0.8 0.8 1","",0.09);
+drpgAddArmor("DESTINITE_BOOTS","Destinite Boots","Boots plated with destinite. It is super durable.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.8 0.2 0.5 1",10,"lshoe\trshoe","0.8 0.2 0.5 1","",0.11);
+
+drpgAddArmor("BRONZE_HELMET","Bronze Helmet","A helmet made with bronze.",20*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/hat/Helmet","0.4 0.2 0 1",0,"Helmet","0.4 0.2 0 1","",0.01);
+drpgAddArmor("SILVER_HELMET","Silver Helmet","A helmet made with silver. It's not very strong but it looks nice.",50*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/hat/Helmet","0.9 0.9 0.9 1",0,"Helmet","0.9 0.9 0.9 1","",0.011);
+drpgAddArmor("DERMITE_HELMET","Dermite Helmet","A helmet made with dermite.",80*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/hat/Helmet","0.5 0.3 0.3 1",0,"Helmet","0.5 0.3 0.3 1",0.018);
+drpgAddArmor("GOLD_HELMET","Gold Helmet","A helmet made with gold. It's not very strong but it looks nice.",200*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/hat/Helmet","0.9 0.9 0 1",0,"Helmet","0.9 0.9 0 1","",0.012);
+drpgAddArmor("IRON_HELMET","Iron Helmet","A helmet made with iron. It is very durable.",250*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/hat/Helmet","0.73 0.62 0.52 1",0,"Helmet","0.73 0.62 0.52 1","",0.075);
+drpgAddArmor("STEEL_HELMET","Steel Helmet","A helmet made with steel. It is extremely durable.",250*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/hat/Helmet","0.8 0.8 0.8 1",0,"Helmet","0.8 0.8 0.8 1","",0.09);
+drpgAddArmor("DESTINITE_HELMET","Destinite Helmet","A helmet made with destinite. It is super durable.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/hat/Helmet","0.8 0.2 0.5 1",0,"Helmet","0.8 0.2 0.5 1","",0.11);
+
+drpgAddArmor("DERMITE_ARMOR","Dermite Armor","A thick dermite breastplate over bronze mail.",225*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/pack/armor","0.5 0.3 0.3 1",3,"armor\tchest\tpants\tlarm\trarm","0.5 0.3 0.3 1\t0.4 0.2 0 1","LinkTunic",0.04);
+drpgAddArmor("DERMITE_BOOTS","Dermite Boots","A pair of hard dermite boots.",80*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.5 0.3 0.3 1",10,"lshoe\trshoe","0.5 0.3 0.3 1",0.018);
+drpgAddArmor("DERMITE_GLOVES","Dermite Gloves","A pair of pale red dermite gauntlets.",50*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.5 0.3 0.3 1",9,"lhand\trhand","0.5 0.3 0.3 1",0.009);
+drpgAddArmor("DERMITE_PAULDRONS","Dermite Pauldrons","Pauldrons made of pale red dermite.",50*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/secondpack/shoulderpads","0.5 0.3 0.3 1",2,"shoulderpads","0.5 0.3 0.3 1","",0.015);
+
+
+drpgAddArmor("ARCHERY_ARMOR","Archery Tunic","A set of hard leather clothing with extra defense.",2000*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/chest/chest","0 0.5 0.25 1",3,"chest\tpants\tlarm\trarm","0 0.5 0.25 1","LinkTunic",0.15);
+drpgAddArmor("ARCHERY_SHOES","Archery Boots","A pair of hard leather shoes with extra defense.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.2 0.2 0.2 1",10,"lshoe\trshoe","0.2 0.2 0.2 1",0.075);
+drpgAddArmor("ARCHERY_GLOVES","Archery Gloves","A pair of hard leather gloves with extra defense.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.4 0.2 0 1",9,"lhand\trhand","0.4 0.2 0 1",0.08);
+drpgAddArmor("ARCHERY_HAT","Archery Hat","A hat that looks cool and boosts your ego.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/hat/scouthat","0 0.5 0.25 1",0,"ScoutHat","0 0.5 0.25 1",0.11);
+
+drpgAddArmor("WIZARD_ROBES","Wizard Robes","A set of robes.",2000*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/chest/chest","0 0 0.9 1",3,"chest\tlarm\trarm\tskirtHip\tlshoe\trshoe\tflareHelmet","0 0 0.9 1","None",0.15);
+drpgAddArmor("WIZARD_GLOVES","Wizard Gloves","A pair of hard leather gloves with extra defense.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.2 0.2 0.2 1",9,"lhand\trhand","0.2 0.2 0.2 1",0.08);
+
+drpgAddArmor("CHAINMAIL_ARMOR","Chainmail Armor","A set of hard chainmail for defense",2000*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/chest/chest","0.5 0.5 0.5 1",3,"chest\tpants\tlarm\trarm","0.5 0.5 0.5 1","Knight",0.15);
+drpgAddArmor("CHAINMAIL_BOOTS","Chainmail Boots","A pair of hard leather shoes with extra defense.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lleg/lshoe","0.2 0.2 0.2 1",10,"lshoe\trshoe","0.2 0.2 0.2 1",0.075);
+drpgAddArmor("CHAINMAIL_GLOVES","Archery Gloves","A pair of hard leather gloves with extra defense.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/lhand/lhand","0.2 0.2 0.2 1",9,"lhand\trhand","0.2 0.2 0.2 1",0.08);
+drpgAddArmor("CHAINMAIL_HAT","Chainmail Hat","A hat. Made out of Chainmail. How illogical.",800*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/hat/knithat","0.5 0.5 0.5 1",0,"KnitHat","0.5 0.5 0.5 1",0.11);
+
+drpgAddArmor("SPIDER_GLOVES","Arachne Gauntlets","A set of gloves covered in small, black spines.",5000,"base/client/ui/avatarIcons/lhand/lhand","0.1 0.2 0.1 1",9,"lhand\trhand","0.1 0.2 0.1 1",0.009);
+
+drpgAddArmor("NECROMANCER_ROBES","Necromancer Robes","A set of robes.",50*$DRPG::Prefs::PriceMultiplier["armor"],"base/client/ui/avatarIcons/chest/chest","0.2 0.2 0.2 1",3,"chest\tlarm\trarm\tskirtHip\tlshoe\trshoe\tflareHelmet","0.2 0.2 0.2 1","None",0.04);
