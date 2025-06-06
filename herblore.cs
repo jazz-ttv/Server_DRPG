@@ -10,7 +10,7 @@ datablock fxDtsBrickData(brickDRPGLimberData : brick1x1stemData)
 	DRPG_gives = "LIMBER_HERB";
 	DRPG_exp = 0.5;
 	DRPG_life = 15;
-	defColor = 8;
+	defColor = 40;
 	veinSize = 30;
 	veinCount = 20;
 	veinVar = 10;
@@ -28,7 +28,7 @@ datablock fxDtsBrickData(brickDRPGRosisData : brick1x1FlowersData)
 	DRPG_gives = "ROSIS_HERB";
 	DRPG_exp = 1.5;
 	DRPG_life = 30;
-	defColor = 23;
+	defColor = 14;
 	veinSize = 25;
 	veinCount = 18;
 	veinVar = 9;
@@ -50,7 +50,7 @@ datablock fxDtsBrickData(brickDRPGAccurisData : brick2x2FlowerData)
 	veinSize = 20;
 	veinCount = 16;
 	veinVar = 8;
-	defColor = 18;
+	defColor = 19;
 	};
 }
 if(!isObject(brickDRPGDeftoraData))
@@ -65,7 +65,7 @@ datablock fxDtsBrickData(brickDRPGDeftoraData : brickSeaGrassData)
 	DRPG_gives = "DEFTORA_HERB";
 	DRPG_exp = 8;
 	DRPG_life = 120;
-	defColor = 19;
+	defColor = 9;
 	veinSize = 15;
 	veinCount = 14;
 	veinVar = 7;
@@ -83,7 +83,7 @@ datablock fxDtsBrickData(brickDRPGDamacData : brick2x2PetalsData)
 	DRPG_gives = "DAMAC_HERB";
 	DRPG_exp = 12;
 	DRPG_life = 250;
-	defColor = 14;
+	defColor = 7;
 	veinSize = 12;
 	veinCount = 12;
 	veinVar = 6;
@@ -101,7 +101,7 @@ datablock fxDtsBrickData(brickDRPGGundorData : brick4x3LeavesData)
 	DRPG_gives = "GUNDOR_HERB";
 	DRPG_exp = 15;
 	DRPG_life = 400;
-	defColor = 12;
+	defColor = 6;
 	veinSize = 10;
 	veinCount = 12;
 	veinVar = 5;

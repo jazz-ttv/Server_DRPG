@@ -10,7 +10,7 @@ datablock fxDtsBrickData(brickDRPGOakData : brickPineTreeData)
 	DRPG_gives = "OAK_WOOD";
 	DRPG_exp = 0.38;
 	DRPG_life = 15;
-	defColor = 8;
+	defColor = 41;
 };
 }
 if(!isObject(brickDRPGWillowData))
@@ -25,7 +25,7 @@ datablock fxDtsBrickData(brickDRPGWillowData : brickPineTreeData)
 	DRPG_gives = "WILLOW_WOOD";
 	DRPG_exp = 1.1;
 	DRPG_life = 30;
-	defColor = 2;
+	defColor = 15;
 };
 }
 if(!isObject(brickDRPGMapleData))
@@ -40,7 +40,7 @@ datablock fxDtsBrickData(brickDRPGMapleData : brickPineTreeData)
 	DRPG_gives = "MAPLE_WOOD";
 	DRPG_exp = 2.6;
 	DRPG_life = 50;
-	defColor = 9;
+	defColor = 2;
 };
 }
 if(!isObject(brickDRPGYewData))
@@ -55,7 +55,7 @@ datablock fxDtsBrickData(brickDRPGYewData : brickPineTreeData)
 	DRPG_gives = "YEW_WOOD";
 	DRPG_exp = 5.2;
 	DRPG_life = 120;
-	defColor = 1;
+	defColor = 3;
 };
 }
 if(!isObject(brickDRPGMoonwellData))
@@ -70,7 +70,7 @@ datablock fxDtsBrickData(brickDRPGMoonwellData : brickPineTreeData)
 	DRPG_gives = "MOONWELL_WOOD";
 	DRPG_exp = 12;
 	DRPG_life = 400;
-	defColor = 15;
+	defColor = 45;
 };
 }
 function axeProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)

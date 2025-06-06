@@ -238,7 +238,7 @@ function DRPGSeedOre(%pos)
 				position = %rpos;
 				angleID = 0;
 				colorID = %dbn.defColor;
-				colorFXID = (%dbn $= "brickDRPGobsCoalData" ? 6 : 0);
+				colorFXID = (%dbn $= "brickDRPGobsCoalData" || %dbn $= "brickDRPGCoalData" ? 0 : 1);
 				isPlanted = 1;
 			};
 			%br.setTrusted(1);
