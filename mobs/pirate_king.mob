@@ -27,7 +27,7 @@ AVATAR_SECONDPACK	1
 AVATAR_SECONDPACKCOLOR	0.900 0.900 0.000 1.000
 AVATAR_CHESTCOLOR	0.392157 0.196078 0 1
 N	Pirate King
-DR	IRON_SHORTSWORD 18
+DR	DESTINITE_BLUNDERBUSS 18
 DL	45
 ML	45
 AL	1
@@ -86,7 +86,7 @@ S	function DRPGMob_PirateKing_Tick(%sw)
 		if(!isObject(%sw))
 			return;
 		%sw.playThread(2,"armReadyRight");
-		%sw.mountImage(ironShortSwordImage,0);
+		%sw.mountImage(destiniteBlunderbussImage,0);
 	}
 	function DRPGMob_PirateKing_Destroy(%sw)
 	{

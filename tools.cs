@@ -706,7 +706,7 @@ datablock ItemData(axeItem)
 	friction = 0.6;
 	emap = true;
 	uiName = "Axe";
-	iconName = "";
+	iconName = "./shapes/icons/axe";
 	doColorShift = true;
 		colorShiftColor = "0.9 0.9 0.9 1";
 	image = axeImage;
@@ -806,7 +806,7 @@ datablock ItemData(sickleItem)
 	friction = 0.6;
 	emap = true;
 	uiName = "Sickle";
-	iconName = "";
+	iconName = "./shapes/icons/sickle";
 	doColorShift = false;
 	image = sickleImage;
 	canDrop = true;
@@ -905,7 +905,7 @@ datablock ItemData(pickaxeItem)
 	friction = 0.6;
 	emap = true;
 	uiName = "Pickaxe";
-	iconName = "";
+	iconName = "./shapes/icons/pickaxe";
 	doColorShift = false;
 	image = pickaxeImage;
 	canDrop = true;

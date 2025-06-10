@@ -3,6 +3,8 @@ package DRPG_hunting
 	function holeBotDamage(%this, %obj, %source, %a, %b, %c)
 	{
 			parent::holeBotDamage(%this, %obj, %source, %a, %b, %c);
+			if(!isObject(%source.client))
+				return;
 			%level = %source.client.getSkillLevel("hunting");
 			if(%level < %this.requiredLevel)
 			{

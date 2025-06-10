@@ -61,8 +61,9 @@ if(!isObject($DRPG::Ticks::Bricks))
 }
 function DRPGBricksTick::onTick(%this,%stamp)
 {
-	%done = saveDRPGBricks(1,1);
-	echo("DRPG: Saved" SPC %done SPC "bricks.");
+	// Disabled in favor of AutoSaver
+	// %done = saveDRPGBricks(1,1);
+	// echo("DRPG: Saved" SPC %done SPC "bricks.");
 	if(getWordCount($DRPG::Nations::War["Vanote"]) > 0)
 	{
 		%cost = getWordCount($DRPG::Nations::War["Vanote"]) * 1000;

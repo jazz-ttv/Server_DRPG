@@ -1,6 +1,7 @@
 AVATAR_ACCENT	1
 AVATAR_ACCENTCOLOR	0.990 0.960 0.000 0.700
 AVATAR_CHEST	0
+AVATAR_CHESTCOLOR	0.392157 0.196078 0 1
 AVATAR_DECALNAME	Medieval-Tunic
 AVATAR_FACENAME	smileyRedBeard
 AVATAR_HAT	0
@@ -24,9 +25,8 @@ AVATAR_RLEG	0
 AVATAR_RLEGCOLOR	0.200 0.200 0.200 1.000
 AVATAR_SECONDPACK	0
 AVATAR_SECONDPACKCOLOR	0.0784314 0.0784314 0.0784314 1
-AVATAR_CHESTCOLOR	0.392157 0.196078 0 1
 N	Pirate
-DR	DERMITE_SHORTSWORD 6
+DR	STEEL_BLUNDERBUSS 0
 DL	10
 ML	10
 AL	1
@@ -85,7 +85,7 @@ S	function DRPGMob_Pirate_Tick(%sw)
 		if(!isObject(%sw))
 			return;
 		%sw.playThread(2,"armReadyRight");
-		%sw.mountImage(dermiteShortSwordImage,0);
+		%sw.mountImage(steelBlunderbussImage,0);
 	}
 	function DRPGMob_Pirate_Destroy(%sw)
 	{

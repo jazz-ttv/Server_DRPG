@@ -1,4 +1,5 @@
 forceRequiredAddon("Bot_Hole");
+forceRequiredAddon("Player_FarmAnimals");
 $DRPG::Version = 0.10;
 $DRPG::ClientVersion = 0.17;
 
@@ -143,10 +144,15 @@ exec("./archery.cs");
 exec("./chat.cs");
 exec("./armor.cs");
 
+//exec("./dungeons.cs");
+
 // Init content - recipes, items, etc
 exec("./content.cs");
+
 //---WEB END: VIEWING SERVER STUFF IN YOUR BROWSER YAY
-exec("./webend.cs");
+//Disabled
+//exec("./webend.cs");
+
 exec("./shapes/Weapon_Spear.cs");
 
 

@@ -44,12 +44,14 @@ function mobDirector::spawnMob(%this,%transform,%typetag,%dungeonRoom,%startTick
 		director = %this;
 		mobType = %typetag;
 		ticking = %startTicking;
+		minigame = $DRPG::Minigame;
+		isBot = 1;
 	};
-	%mob.client = new AiConnection()
-	{
-		player = %mob;
-	};
-	%mob.client.minigame = $DRPG::Minigame;
+	// %mob.client = new ScriptObject()
+	// {
+	// 	player = %mob;
+	// };
+	// %mob.client.minigame = $DRPG::Minigame;
 	if(isObject(%dungeonRoom))
 	{
 		%mob.room = %dungeonRoom;
@@ -88,7 +90,7 @@ function mobDirector::destroyMob(%this,%mob,%nodelete)
 	}
 	%this.tickingCount -= %mob.ticking;
 	%mob.ticking = 0;
-	%mob.client.delete();
+	//%mob.client.delete();
 	if(!%nodelete)
 		%mob.delete();
 	%this.analyzeTick();
@@ -343,6 +345,9 @@ new ScriptObject(DRPGWildMobDirector)
 DRPGWildMobDirector.addMobType("SKELETON_ARCHER","Add-Ons/Server_DRPG/mobs/skeleton_archer_weak.mob");
 DRPGWildMobDirector.addMobType("SKELETON_WARRIOR","Add-Ons/Server_DRPG/mobs/skeleton_warrior_weak.mob");
 DRPGWildMobDirector.addMobType("SHADE","Add-Ons/Server_DRPG/mobs/ShadeOfElrad.mob");
+DRPGWildMobDirector.addMobType("PIRATE","Add-Ons/Server_DRPG/mobs/pirate.mob");
+DRPGWildMobDirector.addMobType("CREEPER","Add-Ons/Server_DRPG/mobs/creeper_weak.mob");
+DRPGWildMobDirector.addMobType("PIRATEKING","Add-Ons/Server_DRPG/mobs/pirate_king.mob");
 $DRPG::Mobs::WildType[1] = SKELETON_WARRIOR;
 $DRPG::Mobs::WildType[2] = SKELETON_ARCHER;
 $DRPG::Mobs::WildType[3] = ELRAD_SHADE;
