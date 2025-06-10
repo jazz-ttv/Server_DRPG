@@ -47,21 +47,21 @@ drpgAddItem("DAGORIC","Dagoric Fruit","Spikey ball of Dagoric Fruit. It looks po
 
 //Cooking
 drpgAddItem("TURKEY", "Turkey Meat", "Meat of a turkey.",5,"base/client/ui/brickIcons/unknown","1 1 1 1",-1);
-drpgAddItem("COOKED_TURKEY", "Cooked Turkey Meat", "Meat of a turkey. (Cooked)",7.5,"base/client/ui/brickIcons/unknown","1 1 1 1","%client.player.setDamageLevel(%client.player.getDamageLevel() - 5); %client.removeItem(\"COOKED_TURKEY\",\"1\");");
+drpgAddItem("COOKED_TURKEY", "Cooked Turkey Meat", "Meat of a turkey. (Cooked)",7.5,"base/client/ui/brickIcons/unknown","1 1 1 1","%client.player.setDamageLevel(%client.player.getDamageLevel() - 10); %client.removeItem(\"COOKED_TURKEY\",\"1\");");
 drpgAddItem("MUTTON", "Mutton", "Meat of a goat.",10,"base/client/ui/brickIcons/unknown","1 1 1 1",-1);
-drpgAddItem("COOKED_MUTTON", "Cooked Mutton", "Meat of a goat. (Cooked)",15,"base/client/ui/brickIcons/unknown","1 1 1 1","%client.player.setDamageLevel(%client.player.getDamageLevel() - 15); %client.removeItem(\"COOKED_MUTTON\",\"1\");");
+drpgAddItem("COOKED_MUTTON", "Cooked Mutton", "Meat of a goat. (Cooked)",15,"base/client/ui/brickIcons/unknown","1 1 1 1","%client.player.setDamageLevel(%client.player.getDamageLevel() - 25); %client.removeItem(\"COOKED_MUTTON\",\"1\");");
 drpgAddItem("BEEF", "Beef", "Meat of a cow.",25,"base/client/ui/brickIcons/unknown","1 1 1 1",-1);
-drpgAddItem("COOKED_BEEF", "Cooked Beef", "Meat of a cow. (Cooked)",35,"base/client/ui/brickIcons/unknown","1 1 1 1","%client.player.setDamageLevel(%client.player.getDamageLevel() - 25); %client.removeItem(\"COOKED_BEEF\",\"1\");");
+drpgAddItem("COOKED_BEEF", "Cooked Beef", "Meat of a cow. (Cooked)",35,"base/client/ui/brickIcons/unknown","1 1 1 1","%client.player.setDamageLevel(%client.player.getDamageLevel() - 50); %client.removeItem(\"COOKED_BEEF\",\"1\");");
 drpgAddItem("RAM_MEAT", "Ram Meat", "Meat of a ram. Gross.",35,"base/client/ui/brickIcons/unknown","1 1 1 1",-1);
-drpgAddItem("COOKED_RAM", "Cooked Ram Meat", "Meat of a ram. Gross. (Cooked)",50,"base/client/ui/brickIcons/unknown","1 1 1 1","%client.player.setDamageLevel(%client.player.getDamageLevel() - 50); %client.removeItem(\"COOKED_RAM\",\"1\");");
+drpgAddItem("COOKED_RAM", "Cooked Ram Meat", "Meat of a ram. Gross. (Cooked)",50,"base/client/ui/brickIcons/unknown","1 1 1 1","%client.player.setDamageLevel(%client.player.getDamageLevel() - 100); %client.removeItem(\"COOKED_RAM\",\"1\");");
 drpgAddItem("BULL_MEAT", "Bull Meat", "Meat of a bull. Gross. Unable to Cook.",65,"base/client/ui/brickIcons/unknown","1 1 1 1",-1);
 drpgAddItem("FLOUR","Flour","A pack of flour.",8*$DRPG::Prefs::PriceMultiplier["crops"],"base/client/ui/brickIcons/unknown","1 1 1 1",-1);
 
 //Herbs
-drpgAddItem("LIMBER_HERB","Limber Root","A root used for regeneration potions.",5*$DRPG::Prefs::PriceMultiplier["crops"], "Add-Ons/Brick_Plant/1x1stem", "1 0.5 0 1",-1);
-drpgAddItem("ROSIS_HERB","Rosis Flower","A flower used for regeneration potions.",10*$DRPG::Prefs::PriceMultiplier["crops"], "Add-Ons/Brick_Plant/1x1flowers", "0.54 0.69 1 1",-1);
-drpgAddItem("ACCURIS_HERB","Accuris Flower","A flower used for speed potions.",25*$DRPG::Prefs::PriceMultiplier["crops"], "Add-Ons/Brick_Plant/2x2flower", "0.92 0.51 0.67 1",-1);
-drpgAddItem("DEFTORA_HERB","Deftora Grass","Grass used for defense potions.",50*$DRPG::Prefs::PriceMultiplier["crops"], "Add-Ons/Brick_Plant/seaweed", " 1 1 1",-1);
+drpgAddItem("LIMBER_HERB","Limber Root","A root used for regeneration potions.",5*$DRPG::Prefs::PriceMultiplier["crops"], "Add-Ons/Brick_Plant/1x1stem", "1 1 1 1",-1);
+drpgAddItem("ROSIS_HERB","Rosis Flower","A flower used for regeneration potions.",10*$DRPG::Prefs::PriceMultiplier["crops"], "Add-Ons/Brick_Plant/1x1flowers", "1 1 1 1",-1);
+drpgAddItem("ACCURIS_HERB","Accuris Flower","A flower used for speed potions.",25*$DRPG::Prefs::PriceMultiplier["crops"], "Add-Ons/Brick_Plant/2x2flower", "1 1 1 1",-1);
+drpgAddItem("DEFTORA_HERB","Deftora Grass","Grass used for defense potions.",50*$DRPG::Prefs::PriceMultiplier["crops"], "Add-Ons/Brick_Plant/seaweed", "1 1 1 1",-1);
 drpgAddItem("DAMAC_HERB","Damac Petals","Petals used for attack potions.",75*$DRPG::Prefs::PriceMultiplier["crops"], "Add-Ons/Brick_Plant/2x2petals", "1 1 1 1",-1);
 drpgAddItem("GUNDOR_HERB","Gundor Leaves","Leaves used for speed potions",100*$DRPG::Prefs::PriceMultiplier["crops"], "Add-Ons/Brick_Plant/3x4leaves", "1 1 1 1",-1);
 

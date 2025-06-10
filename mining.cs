@@ -13,7 +13,7 @@ datablock fxDtsBrickData(brickDRPGTinData : brick2x2RoundData)
 	veinSize = 20;
 	veinCount = 16;
 	veinVar = 2;
-	defColor = 6;
+	defColor = 50;
 };
 }
 if(!isObject(brickDRPGCopperData))
@@ -31,7 +31,7 @@ datablock fxDtsBrickData(brickDRPGCopperData : brick2x2RoundData)
 	veinSize = 12;
 	veinCount = 12;
 	veinVar = 2;
-	defColor = 9;
+	defColor = 11;
 };
 }
 if(!isObject(brickDRPGSilverData))
@@ -49,7 +49,7 @@ datablock fxDtsBrickData(brickDRPGSilverData : brick2x2RoundData)
 	veinSize = 30;
 	veinCount = 6;
 	veinVar = 0;
-	defColor = 4;
+	defColor = 48;
 };
 }
 if(!isObject(brickDRPGGoldData))
@@ -67,7 +67,7 @@ datablock fxDtsBrickData(brickDRPGGoldData : brick2x2RoundData)
 	veinSize = 30;
 	veinCount = 4;
 	veinVar = 0;
-	defColor = 1;
+	defColor = 12;
 };
 }
 if(!isObject(brickDRPGDermiteData))
@@ -82,7 +82,7 @@ datablock fxDtsBrickData(brickDRPGDermiteData : brick2x2RoundData)
 	DRPG_gives = "DERMITE_ORE";
 	DRPG_exp = 2.85;
 	DRPG_life = 50;
-	defColor = 11;
+	defColor = 10;
 };
 }
 if(!isObject(brickDRPGIronData))
@@ -100,7 +100,7 @@ datablock fxDtsBrickData(brickDRPGIronData : brick2x2RoundData)
 	veinSize = 30;
 	veinCount = 24;
 	veinVar = 8;
-	defColor = 8;
+	defColor = 41;
 };
 }
 if(!isObject(brickDRPGDestiniteData))
@@ -118,7 +118,7 @@ datablock fxDtsBrickData(brickDRPGDestiniteData : brick2x2RoundData)
 	veinSize = 100;
 	veinCount = 8;
 	veinVar = 1;
-	defColor = 10;
+	defColor = 18;
 };
 }
 
@@ -138,7 +138,7 @@ datablock fxDtsBrickData(brickDRPGCoalData : brick2x2RoundData)
 	veinSize = 30;
 	veinCount = 20;
 	veinVar = 10;
-	defColor = 16;
+	defColor = 52;
 };
 }
 if(!isObject(brickDRPGObsCoalData))
@@ -153,7 +153,7 @@ datablock fxDtsBrickData(brickDRPGObsCoalData : brick2x2RoundData)
 	DRPG_gives = "OBSIDIAN_COAL";
 	DRPG_exp = 19;
 	DRPG_life = 250;
-	defColor = 16;
+	defColor = 53;
 };
 }
 function pickaxeProjectile::onCollision(%this,%obj,%col,%fade,%pos,%normal)
